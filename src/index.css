@@ -1,0 +1,113 @@
+/* Card Container */
+.movie-card {
+    position: relative;
+    width: 260px;
+    height: 380px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Hover Effects */
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    animation: shake 0.3s ease-in-out;
+  }
+  
+  /* Poster Image */
+  .movie-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  /* Movie Details */
+  .movie-card .movie-info {
+    padding: 15px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Movie Title */
+  .movie-card .movie-info h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Movie Genre */
+  .movie-card .movie-info p {
+    font-size: 14px;
+    color: #ffcc00;
+    margin-bottom: 5px;
+  }
+  
+  /* Rating */
+  .movie-card .rating {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffd700;
+  }
+  
+  /* Hover Shake Animation */
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-3px);
+    }
+    50% {
+      transform: translateX(3px);
+    }
+    75% {
+      transform: translateX(-3px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Neon Glow on Hover */
+  .movie-card:hover::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 14px;
+    z-index: -1;
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #ffcc00,
+      #00ff00,
+      #00ccff,
+      #0000ff,
+      #ff00ff
+    );
+    background-size: 400%;
+    filter: blur(8px);
+    animation: neonGlow 6s linear infinite;
+  }
+  
+  @keyframes neonGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
